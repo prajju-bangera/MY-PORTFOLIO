@@ -2,59 +2,61 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import '../assets/styles/skills.css';
 
+const techCategories = [
+  {
+    name: "Frontend",
+    items: [
+      { name: "HTML", iconClass: "devicon-html5-plain colored" },
+      { name: "CSS", iconClass: "devicon-css3-plain colored" },
+      { name: "JavaScript", iconClass: "devicon-javascript-plain colored" },
+      { name: "TypeScript", iconClass: "devicon-typescript-plain colored" },
+      { name: "React.js", iconClass: "devicon-react-original colored" },
+      { name: "Android", iconClass: "devicon-android-plain colored" },
+      { name: ".Net", iconClass: "devicon-dot-net-plain colored" },
+    ]
+  },
+  {
+    name: "Backend",
+    items: [
+      { name: "Node.js", iconClass: "devicon-nodejs-plain colored" },
+      { name: "Express.js", iconClass: "devicon-express-original colored" },
+      { name: "MongoDB", iconClass: "devicon-mongodb-plain colored" },
+      { name: "MySQL", iconClass: "devicon-mysql-plain colored" },
+      { name: "PHP", iconClass: "devicon-php-plain colored" },
+      { name: "REST API", iconClass: "devicon-nodejs-plain colored" },
+    ]
+  },
+  {
+    name: "Programming",
+    items: [
+      { name: "JavaScript", iconClass: "devicon-javascript-plain colored" },
+      { name: "TypeScript", iconClass: "devicon-typescript-plain colored" },
+      { name: "Python", iconClass: "devicon-python-plain colored" },
+      { name: "C++", iconClass: "devicon-cplusplus-plain colored" },
+      { name: "Java", iconClass: "devicon-java-plain colored" },
+      { name: "C#", iconClass: "devicon-csharp-plain colored" },
+      { name: "R", iconClass: "devicon-rstudio-plain colored" },
+    ]
+  },
+  {
+    name: "Tech & Tools",
+    items: [
+      { name: "VS Code", iconClass: "devicon-vscode-plain colored" },
+      { name: "NPM", iconClass: "devicon-npm-original-wordmark colored" },
+      { name: "GitHub", iconClass: "devicon-github-original colored" },
+      { name: "Netlify", iconClass: "devicon-netlify-plain colored" },
+      { name: "Canva", iconClass: "devicon-canva-original colored" },
+      { name: "Visual Studio", iconClass: "devicon-visualstudio-plain colored" },
+      { name: "Figma", iconClass: "devicon-figma-plain colored" }
+    ]
+  }
+];
+
+
 const TechBanner = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
 
-  const techCategories = [
-    {
-      name: "Frontend",
-      items: [
-        { name: "HTML", iconClass: "devicon-html5-plain colored" },
-        { name: "CSS", iconClass: "devicon-css3-plain colored" },
-        { name: "JavaScript", iconClass: "devicon-javascript-plain colored" },
-        { name: "TypeScript", iconClass: "devicon-typescript-plain colored" },
-        { name: "React.js", iconClass: "devicon-react-original colored" },
-        { name: "Android", iconClass: "devicon-android-plain colored" },
-        { name: ".Net", iconClass: "devicon-dot-net-plain colored" },
-      ]
-    },
-    {
-      name: "Backend",
-      items: [
-        { name: "Node.js", iconClass: "devicon-nodejs-plain colored" },
-        { name: "Express.js", iconClass: "devicon-express-original colored" },
-        { name: "MongoDB", iconClass: "devicon-mongodb-plain colored" },
-        { name: "MySQL", iconClass: "devicon-mysql-plain colored" },
-        { name: "PHP", iconClass: "devicon-php-plain colored" },
-        { name: "REST API", iconClass: "devicon-nodejs-plain colored" },
-      ]
-    },
-    {
-      name: "Programming",
-      items: [
-        { name: "JavaScript", iconClass: "devicon-javascript-plain colored" },
-        { name: "TypeScript", iconClass: "devicon-typescript-plain colored" },
-        { name: "Python", iconClass: "devicon-python-plain colored" },
-        { name: "C++", iconClass: "devicon-cplusplus-plain colored" },
-        { name: "Java", iconClass: "devicon-java-plain colored" },
-        { name: "C#", iconClass: "devicon-csharp-plain colored" },
-        { name: "R", iconClass: "devicon-rstudio-plain colored" },
-      ]
-    },
-    {
-      name: "Tech & Tools",
-      items: [
-        { name: "VS Code", iconClass: "devicon-vscode-plain colored" },
-        { name: "NPM", iconClass: "devicon-npm-original-wordmark colored" },
-        { name: "GitHub", iconClass: "devicon-github-original colored" },
-        { name: "Netlify", iconClass: "devicon-netlify-plain colored" },
-        { name: "Canva", iconClass: "devicon-canva-original colored" },
-        { name: "Visual Studio", iconClass: "devicon-visualstudio-plain colored" },
-        { name: "Figma", iconClass: "devicon-figma-plain colored" }
-      ]
-    }
-  ];
 
   useEffect(() => {
     setIsVisible(true);

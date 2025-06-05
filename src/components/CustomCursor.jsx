@@ -8,7 +8,7 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
   const [hoverTarget, setHoverTarget] = useState(null);
-  const trailRef = useRef([]);
+
   
   // Smooth motion values for the follower
   const cursorX = useMotionValue(-100);
@@ -123,7 +123,7 @@ const CustomCursor = () => {
   };
 
   // Calculate angle for line direction
-  const angle = Math.atan2(position.y - prevPosition.y, position.x - prevPosition.x) * 180 / Math.PI;
+
 
   return (
     <>

@@ -46,18 +46,7 @@ const About = () => {
     }
   });
 
-  const floatingVariants = {
-    initial: { y: 0 },
-    float: {
-      y: [-15, 15],
-      transition: {
-        duration: 4,
-        repeat: Infinity,
-        repeatType: 'reverse',
-        ease: "easeInOut"
-      }
-    }
-  };
+
 
   const imageVariants = {
     hidden: { scale: 0.7, opacity: 0, rotate: -10 },
@@ -102,18 +91,11 @@ const About = () => {
   };
 
   // Generate random sparkles
-  const sparkles = Array.from({ length: 20 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 0.5 + 0.5,
-    delay: Math.random() * 2,
-    duration: Math.random() * 3 + 2
-  }));
+
 
   return (
     <section className="about-section" id="about">
-      {/* Floating shapes background */}
+     
       <div className="floating-shapes">
         <div></div>
         <div></div>

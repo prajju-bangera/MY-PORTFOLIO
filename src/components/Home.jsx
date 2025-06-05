@@ -5,12 +5,9 @@ import '../assets/styles/home.css';
 import { useState } from 'react';
 
 const Home = () => {
-  const [activeButton, setActiveButton] = useState(null);
 
-  const handleButtonClick = (buttonName) => {
-    setActiveButton(buttonName);
-    setTimeout(() => setActiveButton(null), 1000);
-  };
+
+
 
   // Animation variants
   const containerVariants = {
@@ -40,30 +37,7 @@ const Home = () => {
     }
   };
 
-  const buttonVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: { 
-        type: 'spring',
-        stiffness: 500,
-        damping: 15
-      }
-    },
-    hover: {
-      scale: 1.05,
-      y: -5,
-      boxShadow: "0 15px 30px rgba(0,0,0,0.3)",
-      transition: { 
-        type: 'spring',
-        stiffness: 600
-      }
-    },
-    tap: {
-      scale: 0.95
-    }
-  };
+
 
   const imageVariants = {
     hidden: { scale: 0.7, opacity: 0, rotate: -10 },
@@ -113,7 +87,7 @@ const Home = () => {
 
   return (
     <section className="home-section">
-      {/* Floating shapes background */}
+    
       <div className="floating-shapes">
         <div></div>
         <div></div>
