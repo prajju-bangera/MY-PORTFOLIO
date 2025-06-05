@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import '../assets/styles/home.css';
-import { FaPaperPlane, FaFileAlt, FaLaptopCode } from 'react-icons/fa';
+// import { FaPaperPlane, FaFileAlt, FaLaptopCode } from 'react-icons/fa';
 import { useState } from 'react';
 
 const Home = () => {

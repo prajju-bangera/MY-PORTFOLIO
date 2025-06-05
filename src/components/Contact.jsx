@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FaPaperPlane, FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope } from 'react-icons/fa';
-import '../assets/styles/contact.css';
+import '../assets/styles/contact.css';  
 
 const Contact = () => {
   const form = useRef();

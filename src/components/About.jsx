@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 import '../assets/styles/about.css';
 
 const About = () => {
