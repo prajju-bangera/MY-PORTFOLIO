@@ -1,0 +1,323 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #2196F3;
+  --accent-color: #FF5722;
+  --text-color: white;
+  --navbar-height: 80px;
+}
+
+/* Enhanced smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--navbar-height);
+}
+
+/* Disable smooth scrolling when user prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 0;
+  height: var(--navbar-height);
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 12px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Active section highlight */
+.navbar-links a.active {
+  color: var(--primary-color) !important;
+  font-weight: 700;
+}
+
+.navbar-links a.active::after {
+  width: 100% !important;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color)) !important;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar-brand .logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.navbar-brand .logo span {
+  color: var(--secondary-color);
+  font-style: italic;
+  font-family: -webkit-body;
+}
+
+.navbar-links ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.navbar-links a {
+  position: relative;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after,
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--primary-color);
+}
+
+/* Resume Icon Styles */
+.resume-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 5px 16px;
+  border-radius: 4px;
+  position: relative;
+  background: transparent;
+  z-index: 1;
+  border: none;
+}
+
+.resume-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: -1;
+}
+
+.resume-icon:hover::before {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color), var(--primary-color));
+}
+
+.resume-icon:hover {
+  color: var(--primary-color);
+}
+
+.pdf-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.resume-icon:hover .pdf-icon {
+  transform: translateY(2px);
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .resume-icon {
+    display: none;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Throwing animation when opening */
+  .navbar-links.active {
+    animation: slideIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+
+  /* Throwing animation when closing */
+  .navbar-links:not(.active) {
+    animation: slideOut 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      left: -100%;
+    }
+    60% {
+      left: 0;
+    }
+    75% {
+      left: -10px;
+    }
+    90% {
+      left: 5px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+
+  @keyframes slideOut {
+    0% {
+      left: 0;
+    }
+    20% {
+      left: 5px;
+    }
+    100% {
+      left: -100%;
+    }
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .navbar-links a {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+  }
+
+  /* Mobile Resume Link */
+  .mobile-resume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    font-size: 23px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+
+  /* Gradient border animation */
+  .mobile-resume::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;
+    border-radius: inherit;
+    background: linear-gradient(90deg, 
+      var(--primary-color), 
+      var(--secondary-color), 
+      var(--accent-color)) border-box;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    animation: borderAnimation 3s linear infinite;
+    background-size: 200% 100%;
+  }
+
+  @keyframes borderAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .mobile-resume:hover {
+    color: var(--primary-color);
+  }
+
+  .mobile-resume:hover::before {
+    animation-duration: 1.5s;
+  }
+
+  .mobile-resume .pdf-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-resume:hover .pdf-icon {
+    transform: translateY(2px);
+  }
+}

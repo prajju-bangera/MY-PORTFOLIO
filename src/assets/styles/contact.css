@@ -1,0 +1,481 @@
+.contact-section {
+  padding: 5rem 0;
+  background: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.contact-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Pentagon styles */
+.pentagon-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pentagon-border {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  /* background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05)); */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  /* border: 2px solid #4db5ff; Blue border for the pentagon */
+  /* box-shadow: 0 0 20px rgba(77, 181, 255, 0.3); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pentagon-image {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Social icons positioning - outside the pentagon */
+.contact-section .social-icon {
+  position: absolute;
+  color: white;
+  font-size: 2.2rem; /* Increased from 1.8rem */
+  transition: all 0.3s ease;
+  background: #1f1f38;
+  width: 70px; /* Increased from 50px */
+  height: 70px; /* Increased from 50px */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  
+}
+
+.social-icon svg{
+  margin-top: 17px;
+}
+
+/* Adjust the positioning to account for larger circles */
+.social-icon-0 { /* Top */
+  top: calc(50% - 120px * cos(0deg)); /* Increased from 70px */
+  left: calc(50% + 120px * sin(0deg)); /* Increased from 70px */
+  transform: translate(-50%, -50%);
+  
+}
+
+.social-icon-1 { /* Right */
+  top: calc(50% - 120px * cos(72deg));
+  left: calc(50% + 120px * sin(72deg));
+  transform: translate(-50%, -50%);
+}
+
+.social-icon-2 { /* Bottom right */
+  top: calc(50% - 120px * cos(144deg));
+  left: calc(50% + 120px * sin(144deg));
+  transform: translate(-50%, -50%);
+}
+
+.social-icon-3 { /* Bottom left */
+  top: calc(50% - 120px * cos(216deg));
+  left: calc(50% + 120px * sin(216deg));
+  transform: translate(-50%, -50%);
+}
+
+.social-icon-4 { /* Left */
+  top: calc(50% - 120px * cos(288deg));
+  left: calc(50% + 120px * sin(288deg));
+  transform: translate(-50%, -50%);
+}
+.social-icon:hover {
+  color: #000000;
+  background: rgba(77, 181, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Special hover transforms for positioned icons */
+.social-icon-0:hover {
+  transform: translateX(-50%) scale(2.0);
+  transition: transform 1.5s ease;
+
+}
+.social-icon-1:hover {
+  transform: translateX(-100%) scale(2.0);
+  transition: transform 1.5s ease;
+
+}
+
+.social-icon-2:hover {
+    transform: translateX(-100%) scale(2.0);
+  transition: transform 1.5s ease;
+
+
+}
+
+.social-icon-3:hover, 
+.social-icon-4:hover {
+  transform: translateY(-50%) scale(2.0);
+  transition: transform 1.5s ease;
+
+}
+
+/* .pentagon-image {
+  width: 340px;
+  height: 340px;
+  z-index: 2;
+} */
+
+
+
+
+.pentagon-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.divider {
+  width: 50px;
+  height: 3px;
+  background: #6a11cb;
+  margin: 0 auto 2rem;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.contact-details li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  justify-content: center;
+  color: #333;
+}
+
+.contact-details .icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #6a11cb;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons a {
+  color: #6a11cb;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #6a11cb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #6a11cb;
+  color: white;
+  transform: translateY(-3px);
+}
+/* Updated compact premium form styles */
+.contact-form-container {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+  padding: 1.8rem; /* Slightly reduced padding */
+  border-radius: 12px;
+  box-shadow: 
+    0 6px 20px rgba(106, 17, 203, 0.15),
+    0 3px 6px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transform: perspective(800px) rotateX(0deg) rotateY(0deg);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  position: relative;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: 450px; /* Added max-width for better control */
+  width: 100%; /* Takes full width up to max-width */
+  margin: 0 auto; /* Center the form */
+}
+
+.contact-form-container::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(106, 17, 203, 0.04) 0%,
+    rgba(37, 117, 252, 0.04) 100%
+  );
+  transform: rotate(25deg);
+  z-index: 0;
+}
+
+.contact-form-container:hover {
+  transform: perspective(800px) rotateX(0.8deg) rotateY(0.8deg);
+  box-shadow: 
+    0 8px 32px rgba(106, 17, 203, 0.18),
+    0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.5rem; /* Reduced spacing */
+  z-index: 1;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem 0.4rem 0.4rem 0; /* More compact */
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.95rem; /* Slightly smaller font */
+  transition: all 0.3s ease;
+  background: transparent;
+  color: #333;
+  position: relative;
+  z-index: 2;
+}
+
+.form-group label {
+  position: absolute;
+  top: 0.8rem;
+  left: 0;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.25s ease;
+  z-index: 1;
+  pointer-events: none;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus ~ label,
+.form-group input:valid ~ label,
+.form-group textarea:focus ~ label,
+.form-group textarea:valid ~ label {
+  top: -0.4rem;
+  font-size: 0.75rem;
+  color: #6a11cb;
+}
+
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5px; /* Thinner highlight */
+  width: 0;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  transition: all 0.35s ease;
+  z-index: 3;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem; /* More compact */
+  font-size: 0.95rem;
+  border-radius: 45px; /* Slightly less rounded */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  transition: all 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 3px 12px rgba(106, 17, 203, 0.25);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px) scale(1.02); /* Subtler hover */
+  box-shadow: 0 6px 20px rgba(106, 17, 203, 0.35);
+}
+
+/* Keep all animations but make them slightly faster */
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  animation: floatIn 0.5s ease-out forwards;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.15s; }
+.form-group:nth-child(3) { animation-delay: 0.2s; }
+.submit-btn { animation: floatIn 0.5s ease-out 0.25s forwards; }
+
+/* More compact alerts */
+.alert {
+  padding: 0.8rem;
+  margin-top: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-section .social-icon {
+  position: absolute;
+  color: white;
+  font-size: 2.2rem; /* Increased from 1.8rem */
+  transition: all 0.3s ease;
+  background: #1f1f38;
+  width: 70px; /* Increased from 50px */
+  height: 70px; /* Increased from 50px */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  
+}
+
+.social-icon svg{
+  margin-top: 17px;
+}
+
+/* Adjust the positioning to account for larger circles */
+.social-icon-0 { /* Top */
+  top: calc(52% - 120px * cos(0deg)); /* Increased from 70px */
+  left: calc(50% + 120px * sin(0deg)); /* Increased from 70px */
+  transform: translate(-50%, -50%);
+  
+}
+
+.social-icon-1 { /* Right */
+  top: calc(51% - 120px * cos(72deg));
+  left: calc(37% + 120px * sin(72deg));
+  transform: translate(-50%, -50%);
+}
+
+.social-icon-2 { /* Bottom right */
+  top: calc(49% - 120px * cos(144deg));
+  left: calc(40% + 120px * sin(144deg));
+  transform: translate(-50%, -50%);
+}
+
+.social-icon-3 { /* Bottom left */
+  top: calc(49% - 120px * cos(216deg));
+  left: calc(56% + 120px * sin(216deg));
+  transform: translate(-50%, -50%);
+}
+
+.social-icon-4 { /* Left */
+  top: calc(51% - 120px * cos(288deg));
+  left: calc(64% + 120px * sin(288deg));
+  transform: translate(-50%, -50%);
+}
+.social-icon:hover {
+  color: #000000;
+  background: rgba(77, 181, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* Special hover transforms for positioned icons */
+.social-icon-0:hover {
+  transform: translateX(-50%) scale(2.0);
+  transition: transform 1.5s ease;
+
+}
+.social-icon-1:hover {
+  transform: translateX(-100%) scale(2.0);
+  transition: transform 1.5s ease;
+
+}
+
+.social-icon-2:hover {
+    transform: translateX(-100%) scale(2.0);
+  transition: transform 1.5s ease;
+
+
+}
+
+.social-icon-3:hover, 
+.social-icon-4:hover {
+  transform: translateY(-50%) scale(2.0);
+  transition: transform 1.5s ease;
+
+}
+  
+  .pentagon-container {
+    height: auto;
+    margin-top: 2rem;
+  }
+  
+  .pentagon-border {
+    width: 300px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form-container {
+    padding: 2rem 1rem;
+  }
+  
+  .pentagon-border {
+    width: 250px;
+    height: 300px;
+  }
+}

@@ -1,13 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Font Awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+/* React Icons */
+@import url('https://cdn.jsdelivr.net/npm/react-icons@4.8.0/font/react-icons.css');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+.app.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.app.light a {
+  color: var(--primary-color);
+}
+
+.app.dark a {
+  color: #8ab4f8;
+}
+
+.app.light .card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.app.dark .card {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.app.dark .skill-item,
+.app.dark .soft-skill-item,
+.app.dark .timeline-item {
+  background-color: #2a2a2a;
+}
+
+.app.dark .form-group input,
+.app.dark .form-group textarea {
+  background-color: #2a2a2a;
+  color: #f8f9fa;
+  border-color: #444;
+}
+
+.app.dark .form-group input:focus,
+.app.dark .form-group textarea:focus {
+  border-color: var(--primary-color);
+}
+
+.app.dark .skill-bar,
+.app.dark .soft-skill-bar {
+  background-color: #444;
+}
+
+.app.dark .project-technologies span {
+  background-color: rgba(58, 134, 255, 0.2);
+}
+
+.app.dark .education-item p,
+.app.dark .project-content p {
+  color: #aaa;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.app.dark ::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
 }
